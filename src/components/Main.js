@@ -36,7 +36,6 @@ export default class Main extends Component {
     handleSearch = (event) => {
         const target = event.target;
                 const value = target.value;
-                const name = target.name;
 
                 this.setState({
                 search: value
@@ -114,8 +113,8 @@ export default class Main extends Component {
                 </div>
                 <button className="modal-close is-large" aria-label="close" onClick={() => this.closeModal()}></button>
             </div>
-            <div className="is-flex">
-                <div className="is-half">
+            <div className="columns">
+                <div className="column is-two-thirds">
                     {this.state.foods
                         .filter((food) =>
                             food.name
@@ -123,13 +122,13 @@ export default class Main extends Component {
                             .includes(this.state.search.toLowerCase())
                             )
                         .map(food => (
-                    <div className="FoodBox" key={food.id}>
-                        <FoodBox {...food} />
-                    </div>
+                        <div className="FoodBox" key={food.id}>
+                            <FoodBox {...food} />
+                        </div>
                     ))}
                 </div>
-                <div className="todayBox">
-                    <div className="box p-5">
+                <div className="column todayBox">
+                    <div className="box m-2">
                         <p className="is-size-4 mb-2">Today's foods:</p>
                         <ul className="mb-5">
                             <li className="is-size-6">1 Pizza = 400 cal</li>

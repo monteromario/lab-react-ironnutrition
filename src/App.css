@@ -40,3 +40,11 @@
 .addBtn {
   margin-bottom: 10px;
 }
+
+.Foods {
+  min-width: 80%;
+}
+
+.column {
+  min-width: 30%;
+}
